@@ -2,15 +2,15 @@ pipeline {
     agent any
     
     stages {
-        stage('s1') {
+        stage('blue1') {
             parallel {
-                stage('Build') {
+                stage('Build blue1') {
                     agent any
                     steps {
                         echo 'Building from jenkinsfile ...'
                     }
                 }
-                stage('Test') {
+                stage('Test blue1') {
                     steps {
                         echo 'Testing..'
                     }
@@ -19,7 +19,7 @@ pipeline {
         }
         
         
-        stage('Deploy') {
+        stage('blue2') {
             steps {
                 echo 'Deploying....'
             }
